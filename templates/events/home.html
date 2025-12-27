@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventHub | Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .carousel-img {
+          height: 500px;
+          object-fit: cover;
+}
+
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .hero-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .view-btn {
+            padding: 12px 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🎉 PARTY CAROUSEL (ONLINE IMAGES – GUARANTEED) -->
+<!-- 🎉 PARTY CAROUSEL (ONLINE IMAGES – 100% WORKING) -->
+<div id="partyCarousel"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="3000">
+
+    <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img
+                src="https://picsum.photos/1600/500?random=1"
+                class="d-block w-100 carousel-img"
+                alt="Party Night">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>🎉 Party Nights</h2>
+                <p>Celebrate music, lights, and memories</p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img
+                src="https://picsum.photos/1600/500?random=2"
+                class="d-block w-100 carousel-img"
+                alt="DJ Party">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>🎶 DJ & Dance Events</h2>
+                <p>Feel the rhythm and dance all night</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img
+                src="https://picsum.photos/1600/500?random=3"
+                class="d-block w-100 carousel-img"
+                alt="Concert Party">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>✨ Nightlife & Concerts</h2>
+                <p>Where nightlife comes alive</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button"
+            data-bs-target="#partyCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button"
+            data-bs-target="#partyCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+
+<!-- 🔹 ABOUT / CTA -->
+<div class="hero-section">
+    <h1>Welcome to EventHub</h1>
+    <p class="lead mt-3">
+        Discover exciting parties, nightlife events, and celebrations near you.
+    </p>
+    <a href="/events/" class="btn btn-primary view-btn mt-3">
+        View Events
+    </a>
+</div>
+
+<!-- Bootstrap JS (REQUIRED) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

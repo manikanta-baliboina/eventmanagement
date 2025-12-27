@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Events</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #dbeafe, #fdf2f8, #ecfeff, #ede9fe);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .page-title {
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: fadeDown 1s ease;
+        }
+
+        /* Event Card */
+        .event-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: none;
+            transition: all 0.4s ease;
+            animation: fadeUp 0.9s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-14px) scale(1.03);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+        }
+
+        .event-title {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        /* Register Button */
+        .register-btn {
+            border-radius: 30px;
+            padding: 10px 24px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(99,102,241,0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+    <h1 class="text-center page-title mb-5">🎯 Our Events</h1>
+
+    {% if events %}
+    <div class="row g-4">
+        {% for event in events %}
+        <div class="col-md-4">
+            <div class="card event-card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="event-title">{{ event.title }}</h5>
+                    <p class="text-muted">{{ event.description|truncatechars:100 }}</p>
+
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Location:</strong> {{ event.location }}</p>
+
+                    <a href="{% url 'register_event' event.id %}"
+                       class="btn text-white register-btn mt-auto">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p class="text-center text-muted mt-5">No events available</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
